@@ -34,6 +34,7 @@ public class Server {
                             sendToClient("INSERISCI IL LATO DEL QUADRATO", sClient);
                             msg = readFromClient(sClient);
                             double tmp = Double.parseDouble(msg);
+                            System.out.println(tmp);
                             sendToClient("QUADRATO\tAREA = " + tmp*tmp +"\tPERIMETRO = " + tmp*4, sClient);
                             break;
                         case "cerchio":
