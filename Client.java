@@ -56,8 +56,15 @@ public class Client {
                 } while (!msg.equals("N") && !msg.equals("Y"));
 
             } while (msg.equals("Y"));
+            
         } catch (Exception e){
             e.printStackTrace();
+        } finally {
+            try {
+                sClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

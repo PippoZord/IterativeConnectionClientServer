@@ -23,6 +23,7 @@ public class Server {
             while (true) {
                 sClient = srv.accept();
                 boolean l=true;
+                
                 do {
                 
                     sendToClient("SCEGLI LA FIGURA: ", sClient);
@@ -83,13 +84,19 @@ public class Server {
                         l = false;
                     }
                 } while (l);
-            }
 
+            }       
 
 
             
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                sClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
